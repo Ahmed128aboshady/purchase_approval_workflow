@@ -231,7 +231,7 @@ class TestPurchaseApprovalWorkflow(PurchaseApprovalCommon):
     def test_19_manager_override_allows_approval(self):
         """When manager override is enabled, any manager can approve."""
         self.env['ir.config_parameter'].sudo().set_param(
-            'purchase_approval_workflow.allow_manager_override', 'True'
+            'coa_purchase_approval_workflow.allow_manager_override', 'True'
         )
         try:
             po = self._create_po(amount=1000.0)
@@ -241,7 +241,7 @@ class TestPurchaseApprovalWorkflow(PurchaseApprovalCommon):
             self.assertEqual(po.approval_state, 'approved')
         finally:
             self.env['ir.config_parameter'].sudo().set_param(
-                'purchase_approval_workflow.allow_manager_override', 'False'
+                'coa_purchase_approval_workflow.allow_manager_override', 'False'
             )
 
     def test_20_admin_can_always_approve(self):
@@ -255,7 +255,7 @@ class TestPurchaseApprovalWorkflow(PurchaseApprovalCommon):
     def test_21_manager_can_confirm_with_override(self):
         """When override is enabled, manager can confirm without going through approval."""
         self.env['ir.config_parameter'].sudo().set_param(
-            'purchase_approval_workflow.allow_manager_override', 'True'
+            'coa_purchase_approval_workflow.allow_manager_override', 'True'
         )
         try:
             po = self._create_po(amount=1000.0)
@@ -263,7 +263,7 @@ class TestPurchaseApprovalWorkflow(PurchaseApprovalCommon):
             self.assertEqual(po.state, 'purchase')
         finally:
             self.env['ir.config_parameter'].sudo().set_param(
-                'purchase_approval_workflow.allow_manager_override', 'False'
+                'coa_purchase_approval_workflow.allow_manager_override', 'False'
             )
 
     # ------------------------------------------------------------------
@@ -273,7 +273,7 @@ class TestPurchaseApprovalWorkflow(PurchaseApprovalCommon):
     def test_22_workflow_disabled_allows_direct_confirm(self):
         """When workflow is disabled, buyers can confirm directly."""
         self.env['ir.config_parameter'].sudo().set_param(
-            'purchase_approval_workflow.enabled', 'False'
+            'coa_purchase_approval_workflow.enabled', 'False'
         )
         try:
             po = self._create_po(amount=1000.0)
@@ -281,7 +281,7 @@ class TestPurchaseApprovalWorkflow(PurchaseApprovalCommon):
             self.assertEqual(po.state, 'purchase')
         finally:
             self.env['ir.config_parameter'].sudo().set_param(
-                'purchase_approval_workflow.enabled', 'True'
+                'coa_purchase_approval_workflow.enabled', 'True'
             )
 
     # ------------------------------------------------------------------
@@ -291,7 +291,7 @@ class TestPurchaseApprovalWorkflow(PurchaseApprovalCommon):
     def test_23_auto_confirm_after_approval(self):
         """When auto-confirm is enabled, PO is confirmed automatically after final approval."""
         self.env['ir.config_parameter'].sudo().set_param(
-            'purchase_approval_workflow.auto_confirm_after_approval', 'True'
+            'coa_purchase_approval_workflow.auto_confirm_after_approval', 'True'
         )
         try:
             po = self._create_po(amount=1000.0)
@@ -301,7 +301,7 @@ class TestPurchaseApprovalWorkflow(PurchaseApprovalCommon):
             self.assertEqual(po.state, 'purchase')
         finally:
             self.env['ir.config_parameter'].sudo().set_param(
-                'purchase_approval_workflow.auto_confirm_after_approval', 'False'
+                'coa_purchase_approval_workflow.auto_confirm_after_approval', 'False'
             )
 
     # ------------------------------------------------------------------

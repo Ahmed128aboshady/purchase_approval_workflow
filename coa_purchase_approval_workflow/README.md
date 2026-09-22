@@ -1,4 +1,4 @@
-# Purchase Approval Workflow (`purchase_approval_workflow`)
+# Purchase Approval Workflow (`coa_purchase_approval_workflow`)
 
 ## 📌 الوصف العام (Overview)
 Configurable multi-level purchase order approval workflow
@@ -30,7 +30,7 @@ Key Features:
 ---
 
 ## 🛠️ معلومات الموديول (Module Metadata)
-- **الاسم الفني (Technical Name):** `purchase_approval_workflow`
+- **الاسم الفني (Technical Name):** `coa_purchase_approval_workflow`
 - **التصنيف (Category):** `Purchase`
 - **الإصدار (Version):** `19.0.4.0.0`
 - **الاعتماديات (Dependencies):** `purchase`, `mail`, `hr`
@@ -70,4 +70,4 @@ Key Features:
 ## 🚀 كيفية الاستخدام والتثبيت (Installation & Usage)
 1. قُم بإضافة مجلد الموديول إلى مسار `addons_path` الخاص بالسيرفر.
 2. قُم بتحديث قائمة الموديولات في أودو (Update Apps List).
-3. البحث عن `Purchase Approval Workflow` أو `purchase_approval_workflow` والضغط على **تثبيت (Install)**.
+3. البحث عن `Purchase Approval Workflow` أو `coa_purchase_approval_workflow` والضغط على **تثبيت (Install)**.

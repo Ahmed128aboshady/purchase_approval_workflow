@@ -11,22 +11,22 @@ class PurchaseApprovalCommon(TransactionCase):
 
         # Enable the approval workflow
         cls.env['ir.config_parameter'].sudo().set_param(
-            'purchase_approval_workflow.enabled', 'True'
+            'coa_purchase_approval_workflow.enabled', 'True'
         )
         cls.env['ir.config_parameter'].sudo().set_param(
-            'purchase_approval_workflow.enable_multi_level', 'True'
+            'coa_purchase_approval_workflow.enable_multi_level', 'True'
         )
         cls.env['ir.config_parameter'].sudo().set_param(
-            'purchase_approval_workflow.enable_email_notifications', 'False'
+            'coa_purchase_approval_workflow.enable_email_notifications', 'False'
         )
         cls.env['ir.config_parameter'].sudo().set_param(
-            'purchase_approval_workflow.enable_mail_activities', 'False'
+            'coa_purchase_approval_workflow.enable_mail_activities', 'False'
         )
         cls.env['ir.config_parameter'].sudo().set_param(
-            'purchase_approval_workflow.allow_manager_override', 'False'
+            'coa_purchase_approval_workflow.allow_manager_override', 'False'
         )
         cls.env['ir.config_parameter'].sudo().set_param(
-            'purchase_approval_workflow.auto_confirm_after_approval', 'False'
+            'coa_purchase_approval_workflow.auto_confirm_after_approval', 'False'
         )
 
         cls.company = cls.env.ref('base.main_company')
@@ -35,13 +35,13 @@ class PurchaseApprovalCommon(TransactionCase):
         cls.group_purchase_user = cls.env.ref('purchase.group_purchase_user')
         cls.group_purchase_manager = cls.env.ref('purchase.group_purchase_manager')
         cls.group_approval_user = cls.env.ref(
-            'purchase_approval_workflow.group_purchase_approval_user'
+            'coa_purchase_approval_workflow.group_purchase_approval_user'
         )
         cls.group_approval_manager = cls.env.ref(
-            'purchase_approval_workflow.group_purchase_approval_manager'
+            'coa_purchase_approval_workflow.group_purchase_approval_manager'
         )
         cls.group_approval_admin = cls.env.ref(
-            'purchase_approval_workflow.group_purchase_approval_administrator'
+            'coa_purchase_approval_workflow.group_purchase_approval_administrator'
         )
 
         # Users

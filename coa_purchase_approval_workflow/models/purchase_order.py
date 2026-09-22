@@ -174,7 +174,7 @@ class PurchaseOrder(models.Model):
 
     def _is_budget_check_enabled(self):
         return (
-            self._get_param('purchase_approval_workflow.enable_budget_check', 'False') == 'True'
+            self._get_param('coa_purchase_approval_workflow.enable_budget_check', 'False') == 'True'
         )
 
     # ------------------------------------------------------------------
@@ -336,13 +336,13 @@ class PurchaseOrder(models.Model):
     def _compute_can_approve(self):
         user = self.env.user
         is_admin = user.has_group(
-            'purchase_approval_workflow.group_purchase_approval_administrator'
+            'coa_purchase_approval_workflow.group_purchase_approval_administrator'
         )
         manager_override = (
-            self._get_param('purchase_approval_workflow.allow_manager_override', 'False') == 'True'
+            self._get_param('coa_purchase_approval_workflow.allow_manager_override', 'False') == 'True'
         )
         is_manager = user.has_group(
-            'purchase_approval_workflow.group_purchase_approval_manager'
+            'coa_purchase_approval_workflow.group_purchase_approval_manager'
         )
 
         for order in self:
@@ -375,7 +375,7 @@ class PurchaseOrder(models.Model):
 
     def _compute_approval_workflow_enabled(self):
         enabled = (
-            self._get_param('purchase_approval_workflow.enabled', 'True') == 'True'
+            self._get_param('coa_purchase_approval_workflow.enabled', 'True') == 'True'
         )
         for order in self:
             order.approval_workflow_enabled = enabled
@@ -398,23 +398,23 @@ class PurchaseOrder(models.Model):
         return self.env['ir.config_parameter'].sudo().get_param(key, default)
 
     def _is_workflow_enabled(self):
-        return self._get_param('purchase_approval_workflow.enabled', 'True') == 'True'
+        return self._get_param('coa_purchase_approval_workflow.enabled', 'True') == 'True'
 
     def _is_multi_level_enabled(self):
-        return self._get_param('purchase_approval_workflow.enable_multi_level', 'True') == 'True'
+        return self._get_param('coa_purchase_approval_workflow.enable_multi_level', 'True') == 'True'
 
     def _is_email_enabled(self):
         return (
-            self._get_param('purchase_approval_workflow.enable_email_notifications', 'True') == 'True'
+            self._get_param('coa_purchase_approval_workflow.enable_email_notifications', 'True') == 'True'
         )
 
     def _is_activity_enabled(self):
         return (
-            self._get_param('purchase_approval_workflow.enable_mail_activities', 'True') == 'True'
+            self._get_param('coa_purchase_approval_workflow.enable_mail_activities', 'True') == 'True'
         )
 
     def _is_sla_enabled(self):
-        return self._get_param('purchase_approval_workflow.enable_sla', 'False') == 'True'
+        return self._get_param('coa_purchase_approval_workflow.enable_sla', 'False') == 'True'
 
     def _get_buyer_hr_manager(self):
         """Return the HR manager of the buyer (user_id) based on HR employee record."""
@@ -439,7 +439,7 @@ class PurchaseOrder(models.Model):
 
     def _is_trusted_vendor_bypass_enabled(self):
         return (
-            self._get_param('purchase_approval_workflow.enable_trusted_vendor_bypass', 'False') == 'True'
+            self._get_param('coa_purchase_approval_workflow.enable_trusted_vendor_bypass', 'False') == 'True'
         )
 
     def _check_trusted_vendor_bypass(self):
@@ -792,7 +792,7 @@ class PurchaseOrder(models.Model):
                 self._send_final_approval_email()
 
             auto_confirm = (
-                self._get_param('purchase_approval_workflow.auto_confirm_after_approval', 'False')
+                self._get_param('coa_purchase_approval_workflow.auto_confirm_after_approval', 'False')
                 == 'True'
             )
             if auto_confirm:
@@ -924,7 +924,7 @@ class PurchaseOrder(models.Model):
 
     def _send_submission_email(self):
         template = self.env.ref(
-            'purchase_approval_workflow.email_template_po_submission',
+            'coa_purchase_approval_workflow.email_template_po_submission',
             raise_if_not_found=False,
         )
         if template:
@@ -932,7 +932,7 @@ class PurchaseOrder(models.Model):
 
     def _send_approval_email(self):
         template = self.env.ref(
-            'purchase_approval_workflow.email_template_po_approval_next_level',
+            'coa_purchase_approval_workflow.email_template_po_approval_next_level',
             raise_if_not_found=False,
         )
         if template:
@@ -940,7 +940,7 @@ class PurchaseOrder(models.Model):
 
     def _send_final_approval_email(self):
         template = self.env.ref(
-            'purchase_approval_workflow.email_template_po_final_approval',
+            'coa_purchase_approval_workflow.email_template_po_final_approval',
             raise_if_not_found=False,
         )
         if template:
@@ -948,7 +948,7 @@ class PurchaseOrder(models.Model):
 
     def _send_rejection_email(self, reason):
         template = self.env.ref(
-            'purchase_approval_workflow.email_template_po_rejection',
+            'coa_purchase_approval_workflow.email_template_po_rejection',
             raise_if_not_found=False,
         )
         if template:
@@ -958,7 +958,7 @@ class PurchaseOrder(models.Model):
 
     def _send_sla_overdue_email(self):
         template = self.env.ref(
-            'purchase_approval_workflow.email_template_po_sla_overdue',
+            'coa_purchase_approval_workflow.email_template_po_sla_overdue',
             raise_if_not_found=False,
         )
         if template:
@@ -1088,7 +1088,7 @@ class PurchaseOrder(models.Model):
             if self._is_email_enabled():
                 self._send_final_approval_email()
             auto_confirm = (
-                self._get_param('purchase_approval_workflow.auto_confirm_after_approval', 'False')
+                self._get_param('coa_purchase_approval_workflow.auto_confirm_after_approval', 'False')
                 == 'True'
             )
             if auto_confirm:
@@ -1199,14 +1199,14 @@ class PurchaseOrder(models.Model):
     def button_confirm(self):
         if self._is_workflow_enabled():
             is_admin = self.env.user.has_group(
-                'purchase_approval_workflow.group_purchase_approval_administrator'
+                'coa_purchase_approval_workflow.group_purchase_approval_administrator'
             )
             manager_override = (
-                self._get_param('purchase_approval_workflow.allow_manager_override', 'False')
+                self._get_param('coa_purchase_approval_workflow.allow_manager_override', 'False')
                 == 'True'
             )
             is_manager = self.env.user.has_group(
-                'purchase_approval_workflow.group_purchase_approval_manager'
+                'coa_purchase_approval_workflow.group_purchase_approval_manager'
             )
             internal_action = self.env.context.get('approval_workflow_action', False)
 
@@ -1257,10 +1257,10 @@ class PurchaseOrder(models.Model):
     def write(self, vals):
         if not self.env.context.get('approval_workflow_action') and not self.env.su:
             is_admin = self.env.user.has_group(
-                'purchase_approval_workflow.group_purchase_approval_administrator'
+                'coa_purchase_approval_workflow.group_purchase_approval_administrator'
             )
             is_manager = self.env.user.has_group(
-                'purchase_approval_workflow.group_purchase_approval_manager'
+                'coa_purchase_approval_workflow.group_purchase_approval_manager'
             )
             if not is_admin and not is_manager:
                 locked_changes = set(vals.keys()) & self._LOCKED_FIELDS_DURING_APPROVAL

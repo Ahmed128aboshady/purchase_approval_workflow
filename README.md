@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="purchase_approval_workflow/static/description/coa_logo.jpg" width="120" height="120" alt="COA Egypt Logo" />
+  <img src="coa_purchase_approval_workflow/static/description/coa_logo.jpg" width="120" height="120" alt="COA Egypt Logo" />
   <h1>COA Purchase Approval Workflow | Odoo Procurement Governance</h1>
   <p><strong>Multi-Tier Purchase Order Approval Workflow with Spending Limits, SLA Escalation, and Audit Trails</strong></p>
 
@@ -44,19 +44,19 @@ With built-in SLA deadline tracking, automatic escalation, mobile one-click emai
 ## Application Previews
 
 ### 1. Purchase Approval Matrices Overview
-![Purchase Approval Matrices Overview](purchase_approval_workflow/static/description/01_purchase_approval_matrix_list.png)
+![Purchase Approval Matrices Overview](coa_purchase_approval_workflow/static/description/01_purchase_approval_matrix_list.png)
 
 ### 2. Detailed Approval Tier Form & Spending Rules
-![Detailed Approval Tier Form](purchase_approval_workflow/static/description/02_purchase_approval_tier_form.png)
+![Detailed Approval Tier Form](coa_purchase_approval_workflow/static/description/02_purchase_approval_tier_form.png)
 
 ### 3. Complete Purchase Order Approval History & Audit Trail
-![Purchase Order Approval History](purchase_approval_workflow/static/description/03_purchase_approval_history.png)
+![Purchase Order Approval History](coa_purchase_approval_workflow/static/description/03_purchase_approval_history.png)
 
 ---
 
 ## Installation & Configuration
 
-1. Place the `purchase_approval_workflow` directory into your Odoo custom addons path.
+1. Place the `coa_purchase_approval_workflow` directory into your Odoo custom addons path.
 2. Update the Apps list in Odoo developer mode.
 3. Install **COA Purchase Approval Workflow**.
 4. Navigate to **Purchase > Configuration > Approval Matrices** to define your organization's spending thresholds and approver tiers.

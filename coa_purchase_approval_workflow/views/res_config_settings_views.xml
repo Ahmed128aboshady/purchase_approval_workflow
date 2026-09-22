@@ -14,7 +14,7 @@
             <!-- Add our settings block after the Products block (last in purchase settings) -->
             <xpath expr="//block[@name='matrix_setting_container']" position="after">
 
-                <block title="Purchase Approval Workflow" name="purchase_approval_workflow_container">
+                <block title="Purchase Approval Workflow" name="coa_purchase_approval_workflow_container">
 
                     <setting id="purchase_approval_enabled"
                              help="Require approval before RFQs can be confirmed as Purchase Orders.">
@@ -80,7 +80,7 @@
 
                     <setting invisible="not purchase_approval_enabled">
                         <div class="mt8">
-                            <button name="%(purchase_approval_workflow.action_purchase_approval_matrix)d"
+                            <button name="%(coa_purchase_approval_workflow.action_purchase_approval_matrix)d"
                                     icon="oi-arrow-right"
                                     type="action"
                                     string="Configure Approval Matrix"

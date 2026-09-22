@@ -8,27 +8,27 @@
         id="menu_my_pending_approvals"
         name="My Pending Approvals"
         parent="purchase.menu_procurement_management"
-        action="purchase_approval_workflow.action_my_pending_approvals"
+        action="coa_purchase_approval_workflow.action_my_pending_approvals"
         sequence="10"
-        groups="purchase_approval_workflow.group_purchase_approval_manager,purchase_approval_workflow.group_purchase_approval_administrator"/>
+        groups="coa_purchase_approval_workflow.group_purchase_approval_manager,coa_purchase_approval_workflow.group_purchase_approval_administrator"/>
 
     <menuitem
         id="menu_all_pending_approvals"
         name="All Pending Approvals"
         parent="purchase.menu_procurement_management"
-        action="purchase_approval_workflow.action_all_pending_approvals"
+        action="coa_purchase_approval_workflow.action_all_pending_approvals"
         sequence="11"
-        groups="purchase_approval_workflow.group_purchase_approval_manager,purchase_approval_workflow.group_purchase_approval_administrator"/>
+        groups="coa_purchase_approval_workflow.group_purchase_approval_manager,coa_purchase_approval_workflow.group_purchase_approval_administrator"/>
 
     <!-- ============================================================
          Purchase > Configuration > Approvals Workflow  (parent category)
     ============================================================ -->
     <menuitem
-        id="menu_purchase_approval_workflow_category"
+        id="menu_coa_purchase_approval_workflow_category"
         name="Approvals Workflow"
         parent="purchase.menu_purchase_config"
         sequence="20"
-        groups="purchase_approval_workflow.group_purchase_approval_manager,purchase.group_purchase_manager"/>
+        groups="coa_purchase_approval_workflow.group_purchase_approval_manager,purchase.group_purchase_manager"/>
 
     <!-- ============================================================
          Purchase > Configuration > Approvals Workflow > Approval Matrix
@@ -36,10 +36,10 @@
     <menuitem
         id="menu_purchase_approval_matrix"
         name="Approval Matrix"
-        parent="purchase_approval_workflow.menu_purchase_approval_workflow_category"
-        action="purchase_approval_workflow.action_purchase_approval_matrix"
+        parent="coa_purchase_approval_workflow.menu_coa_purchase_approval_workflow_category"
+        action="coa_purchase_approval_workflow.action_purchase_approval_matrix"
         sequence="10"
-        groups="purchase_approval_workflow.group_purchase_approval_administrator,purchase.group_purchase_manager"/>
+        groups="coa_purchase_approval_workflow.group_purchase_approval_administrator,purchase.group_purchase_manager"/>
 
     <!-- ============================================================
          Purchase > Configuration > Approvals Workflow > Workflow Diagram
@@ -47,10 +47,10 @@
     <menuitem
         id="menu_purchase_approval_matrix_diagram"
         name="Workflow Diagram"
-        parent="purchase_approval_workflow.menu_purchase_approval_workflow_category"
-        action="purchase_approval_workflow.action_purchase_approval_matrix_diagram"
+        parent="coa_purchase_approval_workflow.menu_coa_purchase_approval_workflow_category"
+        action="coa_purchase_approval_workflow.action_purchase_approval_matrix_diagram"
         sequence="20"
-        groups="purchase_approval_workflow.group_purchase_approval_administrator,purchase.group_purchase_manager"/>
+        groups="coa_purchase_approval_workflow.group_purchase_approval_administrator,purchase.group_purchase_manager"/>
 
     <!-- ============================================================
          Purchase > Configuration > Approvals Workflow > Approval History
@@ -58,10 +58,10 @@
     <menuitem
         id="menu_purchase_approval_history"
         name="Approval History"
-        parent="purchase_approval_workflow.menu_purchase_approval_workflow_category"
-        action="purchase_approval_workflow.action_purchase_approval_history"
+        parent="coa_purchase_approval_workflow.menu_coa_purchase_approval_workflow_category"
+        action="coa_purchase_approval_workflow.action_purchase_approval_history"
         sequence="30"
-        groups="purchase_approval_workflow.group_purchase_approval_manager,purchase.group_purchase_manager"/>
+        groups="coa_purchase_approval_workflow.group_purchase_approval_manager,purchase.group_purchase_manager"/>
 
     <!-- ============================================================
          Purchase > Configuration > Approvals Workflow > Approval Analytics  (Feature 9)
@@ -69,10 +69,10 @@
     <menuitem
         id="menu_purchase_approval_analytics"
         name="Approval Analytics"
-        parent="purchase_approval_workflow.menu_purchase_approval_workflow_category"
-        action="purchase_approval_workflow.action_purchase_approval_analytics"
+        parent="coa_purchase_approval_workflow.menu_coa_purchase_approval_workflow_category"
+        action="coa_purchase_approval_workflow.action_purchase_approval_analytics"
         sequence="40"
-        groups="purchase_approval_workflow.group_purchase_approval_manager,purchase.group_purchase_manager"/>
+        groups="coa_purchase_approval_workflow.group_purchase_approval_manager,purchase.group_purchase_manager"/>
 
     <!-- ============================================================
          Purchase > Configuration > Approvals Workflow > Apply Policy Template  (Feature 11)
@@ -80,10 +80,10 @@
     <menuitem
         id="menu_purchase_approval_policy_wizard"
         name="Apply Policy Template"
-        parent="purchase_approval_workflow.menu_purchase_approval_workflow_category"
-        action="purchase_approval_workflow.action_purchase_approval_policy_wizard"
+        parent="coa_purchase_approval_workflow.menu_coa_purchase_approval_workflow_category"
+        action="coa_purchase_approval_workflow.action_purchase_approval_policy_wizard"
         sequence="50"
-        groups="purchase_approval_workflow.group_purchase_approval_administrator,purchase.group_purchase_manager"/>
+        groups="coa_purchase_approval_workflow.group_purchase_approval_administrator,purchase.group_purchase_manager"/>
 
     <!-- ============================================================
          Purchase > Configuration > Approvals Workflow > Export Audit Trail  (Feature 14)
@@ -91,9 +91,9 @@
     <menuitem
         id="menu_purchase_approval_audit_export"
         name="Export Audit Trail"
-        parent="purchase_approval_workflow.menu_purchase_approval_workflow_category"
-        action="purchase_approval_workflow.action_purchase_approval_audit_export_wizard"
+        parent="coa_purchase_approval_workflow.menu_coa_purchase_approval_workflow_category"
+        action="coa_purchase_approval_workflow.action_purchase_approval_audit_export_wizard"
         sequence="60"
-        groups="purchase_approval_workflow.group_purchase_approval_manager,purchase.group_purchase_manager"/>
+        groups="coa_purchase_approval_workflow.group_purchase_approval_manager,purchase.group_purchase_manager"/>
 
 </odoo>

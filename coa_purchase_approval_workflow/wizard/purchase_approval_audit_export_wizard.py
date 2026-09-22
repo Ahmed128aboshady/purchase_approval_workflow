@@ -175,5 +175,5 @@ class PurchaseApprovalAuditExportWizard(models.TransientModel):
         }
 
     def _export_pdf(self, records):
-        report = self.env.ref('purchase_approval_workflow.action_report_purchase_approval_audit_trail')
+        report = self.env.ref('coa_purchase_approval_workflow.action_report_purchase_approval_audit_trail')
         return report.report_action(records)
